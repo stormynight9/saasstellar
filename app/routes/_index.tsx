@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import { Button } from "~/components/ui/button";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -11,6 +12,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix wohoo</h1>
+      <Button>Click me</Button>
       <ul>
         <li>
           <a
