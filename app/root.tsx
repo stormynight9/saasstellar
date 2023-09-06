@@ -8,6 +8,7 @@ import {
     Scripts,
     ScrollRestoration,
 } from '@remix-run/react'
+import TailwindIndicator from './components/tailwind-indicator'
 
 export const links: LinksFunction = () => [
     { rel: 'stylesheet', href: stylesheet },
@@ -25,11 +26,12 @@ export default function App() {
                 <Meta />
                 <Links />
             </head>
-            <body className='font-dm'>
+            <body className='bg-background font-dm antialiased'>
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
                 <LiveReload />
+                <TailwindIndicator />
             </body>
         </html>
     )
