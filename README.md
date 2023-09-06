@@ -1,6 +1,6 @@
 # Welcome to Remix!
 
-- [Remix Docs](https://remix.run/docs)
+-   [Remix Docs](https://remix.run/docs)
 
 ## Development
 
@@ -34,8 +34,8 @@ If you're familiar with deploying node applications, the built-in Remix app serv
 
 Make sure to deploy the output of `remix build`
 
-- `build/`
-- `public/build/`
+-   `build/`
+-   `public/build/`
 
 ### Using a Template
 
@@ -43,8 +43,8 @@ When you ran `npx create-remix@latest` there were a few choices for hosting. You
 
 Most importantly, this means everything in the `app/` directory, but if you've further customized your current application outside of there it may also include:
 
-- Any assets you've added/updated in `public/`
-- Any updated versions of root files such as `.eslintrc.js`, etc.
+-   Any assets you've added/updated in `public/`
+-   Any updated versions of root files such as `.eslintrc.js`, etc.
 
 ```sh
 cd ..
