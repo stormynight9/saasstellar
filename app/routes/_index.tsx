@@ -73,6 +73,7 @@ export const meta: V2_MetaFunction = () => {
         },
         {
             property: 'og:image',
+            name: 'og:image',
             content: 'https://saasstellar.vercel.app/saasstellar-og-image.jpg',
         },
         {
