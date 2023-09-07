@@ -73,7 +73,7 @@ export const meta: V2_MetaFunction = () => {
         },
         {
             property: 'og:image',
-            content: '/saasstellar-og-image.webp',
+            content: 'https://saasstellar.vercel.app/saasstellar-og-image.webp',
         },
         {
             property: 'og:url',
