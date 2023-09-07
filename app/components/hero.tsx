@@ -23,7 +23,7 @@ const Hero = () => {
                     Discover a brighter future with us.
                 </span>
             </p>
-            <div className='mx-auto flex w-full max-w-sm flex-col items-end space-y-2'>
+            <div className='mx-auto mt-8 flex w-full max-w-sm flex-col items-end space-y-2'>
                 <div className='flex w-full max-w-sm flex-col items-start gap-1.5'>
                     <Label
                         className='text-left text-muted-foreground'
