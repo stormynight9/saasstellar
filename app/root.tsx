@@ -1,3 +1,4 @@
+import { Partytown } from '@builder.io/partytown/react'
 import type { LinksFunction } from '@remix-run/node'
 import {
     Links,
@@ -23,6 +24,21 @@ export default function App() {
                 <meta
                     name='viewport'
                     content='width=device-width,initial-scale=1'
+                />
+                {/* <Partytown debug={true} forward={['dataLayer.push']} /> */}
+                <script
+                    // type='text/partytown'
+                    async
+                    src='https://www.googletagmanager.com/gtag/js?id=G-6JV9TN499V'
+                />
+                <script
+                    // type='text/partytown'
+                    dangerouslySetInnerHTML={{
+                        __html: `window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-6JV9TN499V');`,
+                    }}
                 />
                 <Meta />
                 <Links />
