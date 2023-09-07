@@ -99,7 +99,7 @@ export const meta: V2_MetaFunction = () => {
         },
         {
             name: 'twitter:image',
-            content: '/saasstellar-og-image.webp',
+            content: 'https://saasstellar.vercel.app/saasstellar-og-image.webp',
         },
         {
             property: 'twitter:url',
