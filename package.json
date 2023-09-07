@@ -2,12 +2,14 @@
     "private": true,
     "sideEffects": false,
     "scripts": {
-        "build": "remix build",
+        "build": "pnpm partytown && remix build",
         "dev": "remix dev",
         "start": "remix-serve build",
-        "typecheck": "tsc"
+        "typecheck": "tsc",
+        "partytown": "partytown copylib public/~partytown"
     },
     "dependencies": {
+        "@builder.io/partytown": "^0.8.0",
         "@radix-ui/react-popover": "^1.0.6",
         "@radix-ui/react-slot": "^1.0.2",
         "@remix-run/css-bundle": "^1.19.3",
