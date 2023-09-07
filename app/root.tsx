@@ -33,7 +33,7 @@ export default function App() {
                 <Scripts />
                 <LiveReload />
                 <TailwindIndicator />
-                <Analytics />
+                {process.env.NODE_ENV === 'production' && <Analytics />}
             </body>
         </html>
     )
