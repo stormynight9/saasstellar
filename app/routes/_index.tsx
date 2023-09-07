@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from '@remix-run/node'
+import Hero from '~/components/hero'
 import Navbar from '~/components/navbar'
 
 export const meta: V2_MetaFunction = () => {
@@ -117,6 +118,7 @@ export default function Index() {
     return (
         <>
             <Navbar />
+            <Hero />
         </>
     )
 }
