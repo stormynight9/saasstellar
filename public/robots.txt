@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://saasstellar.vercel.app
+
+# Sitemaps
+Sitemap: https://saasstellar.vercel.app/sitemap.xml
