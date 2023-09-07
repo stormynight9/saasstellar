@@ -73,7 +73,7 @@ export const meta: V2_MetaFunction = () => {
         },
         {
             property: 'og:image',
-            content: 'https://saasstellar.vercel.app/saasstellar-og-image.webp',
+            content: 'https://saasstellar.vercel.app/saasstellar-og-image.jpg',
         },
         {
             property: 'og:url',
@@ -96,10 +96,6 @@ export const meta: V2_MetaFunction = () => {
             name: 'twitter:description',
             content:
                 'Discover how SaaSStellar can help you streamline operations, make data-driven decisions, and drive business growth. Experience the power of seamless workflows and efficiency tools.',
-        },
-        {
-            name: 'twitter:image',
-            content: 'https://saasstellar.vercel.app/saasstellar-og-image.jpg',
         },
         {
             property: 'twitter:url',
