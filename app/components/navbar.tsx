@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className='border-b px-5 py-3'>
             <nav className='mx-auto flex max-w-7xl items-center justify-between'>
                 <Link to='/' className='flex items-center gap-2'>
-                    <img src={saasstellar} alt='SaaSStellar' />
+                    <img src={saasstellar} alt='' width={28} height={26} />
                     <span className='text-lg font-semibold'>SaaSStellar</span>
                 </Link>
                 <div className='flex items-center gap-6'>
@@ -57,6 +57,7 @@ const Navbar = () => {
                         }}
                         variant='outline'
                         size='icon'
+                        aria-label='toggle theme'
                     >
                         {colorTheme === 'dark' ? (
                             <SunIcon className='h-5 w-5' />
@@ -71,6 +72,7 @@ const Navbar = () => {
                                 variant={'outline'}
                                 size={'icon'}
                                 className='inline-flex md:hidden'
+                                aria-label='open menu'
                             >
                                 <MenuIcon className='h-5 w-5' />
                             </Button>
