@@ -1,4 +1,3 @@
-import stylesheet from '~/tailwind.css'
 import type { LinksFunction } from '@remix-run/node'
 import {
     Links,
@@ -8,6 +7,8 @@ import {
     Scripts,
     ScrollRestoration,
 } from '@remix-run/react'
+import { Analytics } from '@vercel/analytics/react'
+import stylesheet from '~/tailwind.css'
 import TailwindIndicator from './components/tailwind-indicator'
 
 export const links: LinksFunction = () => [
@@ -32,6 +33,7 @@ export default function App() {
                 <Scripts />
                 <LiveReload />
                 <TailwindIndicator />
+                <Analytics />
             </body>
         </html>
     )
