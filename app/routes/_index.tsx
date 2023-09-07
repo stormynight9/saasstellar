@@ -73,7 +73,8 @@ export const meta: V2_MetaFunction = () => {
         },
         {
             property: 'og:image',
-            content: 'https://saasstellar.vercel.app/saasstellar-og-image.webp',
+            name: 'og:image',
+            content: 'https://saasstellar.vercel.app/saasstellar-og-image.png',
         },
         {
             property: 'og:url',
@@ -99,7 +100,7 @@ export const meta: V2_MetaFunction = () => {
         },
         {
             name: 'twitter:image',
-            content: 'https://saasstellar.vercel.app/saasstellar-og-image.jpg',
+            content: 'https://saasstellar.vercel.app/saasstellar-og-image.png',
         },
         {
             name: 'twitter:url',
