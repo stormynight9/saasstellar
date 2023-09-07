@@ -59,7 +59,7 @@ const Navbar = () => {
                         size='icon'
                         aria-label='toggle theme'
                     >
-                        {colorTheme === 'dark' ? (
+                        {colorTheme === 'light' ? (
                             <SunIcon className='h-5 w-5' />
                         ) : (
                             <MoonStarIcon className='h-5 w-5' />
