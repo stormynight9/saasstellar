@@ -9,7 +9,7 @@ const Hero = () => {
             <p className='bg-300% bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
                 Unlock Your Potential
             </p>
-            <h1 className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
+            <h1 className='scroll-m-20 bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text font-inter text-4xl font-extrabold tracking-tight text-transparent lg:text-5xl'>
                 Discover the Power of SaaS{' '}
                 <span className='bg-300% bg-gradient-to-r from-primary to-rose-600 bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl'>
                     Simplicity.
