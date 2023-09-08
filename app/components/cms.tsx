@@ -1,13 +1,13 @@
-import Wordpress from '~/components/icons/wordpress'
-import Framer from '~/components/icons/framer'
-import Notion from '~/components/icons/notion'
+import React from 'react'
 import Drupal from '~/components/icons/drupal'
-import Strapi from '~/components/icons/strapi'
-import Typedream from '~/components/icons/typedream'
+import Framer from '~/components/icons/framer'
 import Joomla from '~/components/icons/joomla'
+import Notion from '~/components/icons/notion'
 import Sanity from '~/components/icons/sanity'
 import Storyblok from '~/components/icons/storyblok'
-import React from 'react'
+import Strapi from '~/components/icons/strapi'
+import Typedream from '~/components/icons/typedream'
+import Wordpress from '~/components/icons/wordpress'
 import {
     Tooltip,
     TooltipContent,
