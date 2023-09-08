@@ -1,4 +1,5 @@
 import type { V2_MetaFunction } from '@remix-run/node'
+import Cms from '~/components/cms'
 import Hero from '~/components/hero'
 import Navbar from '~/components/navbar'
 
@@ -119,6 +120,7 @@ export default function Index() {
         <>
             <Navbar />
             <Hero />
+            <Cms />
         </>
     )
 }
