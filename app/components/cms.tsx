@@ -65,7 +65,7 @@ const Cms = () => {
                     <React.Fragment key={item.name}>
                         <TooltipProvider delayDuration={100}>
                             <Tooltip>
-                                <TooltipTrigger>
+                                <TooltipTrigger aria-label={item.name}>
                                     {item.component}
                                 </TooltipTrigger>
                                 <TooltipContent side='bottom'>
