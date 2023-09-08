@@ -6,9 +6,9 @@ import { Label } from './ui/label'
 const Hero = () => {
     return (
         <main className='mx-auto mt-24 flex max-w-2xl flex-col gap-6 px-5 text-center'>
-            {/* <p className='bg-300% bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
+            <p className='bg-300% bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
                 Unlock Your Potential
-            </p> */}
+            </p>
             <h1 className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
                 Discover the Power of SaaS{' '}
                 <span className='bg-300% bg-gradient-to-r from-primary to-rose-600 bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl'>
