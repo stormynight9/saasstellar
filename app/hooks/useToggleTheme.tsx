@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 export default function useToggleTheme() {
-    let item: string = 'light'
+    let item: string = 'dark'
     if (typeof window !== 'undefined') {
-        item = localStorage.getItem('theme') || 'light'
+        item = localStorage.getItem('theme') || 'dark'
     }
     const [theme, setTheme] = useState(item)
     const colorTheme = theme === 'dark' ? 'light' : 'dark'

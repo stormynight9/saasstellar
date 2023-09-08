@@ -1,9 +1,13 @@
-import { MoveRightIcon } from 'lucide-react'
+import { useForm } from '@formspree/react'
+import { Loader2Icon, MoveRightIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
+import { cn } from '~/lib/utils'
 
 const Hero = () => {
+    const [state, handleSubmit] = useForm('mjvqrzpz')
+
     return (
         <main className='mx-auto mt-24 flex max-w-2xl flex-col gap-6 px-5 text-center'>
             <p className='bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
@@ -34,7 +38,10 @@ const Hero = () => {
                     Discover a brighter future with us.
                 </span>
             </p>
-            <div className='mx-auto mt-8 flex w-full max-w-sm flex-col items-end space-y-2'>
+            <form
+                onSubmit={handleSubmit}
+                className='mx-auto mt-8 flex w-full max-w-sm flex-col items-end space-y-2'
+            >
                 <div className='flex w-full max-w-sm flex-col items-start gap-1.5'>
                     <Label
                         className='text-left text-muted-foreground'
@@ -42,17 +49,52 @@ const Hero = () => {
                     >
                         Want an early invite?
                     </Label>
-                    <Input type='email' placeholder='Email' />
+                    <Input
+                        required
+                        type='email'
+                        placeholder='Email address...'
+                        name='email'
+                    />
                 </div>
-                <Button className='flex w-full justify-between' type='submit'>
-                    Join the waitlist
-                    <MoveRightIcon className='mr-2 h-4 w-4' />
-                </Button>
-                <p className='w-full text-center text-sm text-muted-foreground'>
-                    Join a waitlist of 200+ members!
-                </p>
-            </div>
-            <span className='mx-auto h-24 w-[1px]  rounded-full bg-primary bg-gradient-to-b from-background to-transparent'></span>
+                {!state.succeeded && (
+                    <Button
+                        className={cn(
+                            'flex w-full justify-between',
+                            state.submitting && 'justify-center'
+                        )}
+                        type='submit'
+                        disabled={state.submitting}
+                    >
+                        {state.submitting && (
+                            <Loader2Icon className='mr-2 h-4 w-4 animate-spin' />
+                        )}
+                        {!state.submitting && 'Join the waitlist'}
+                        {!state.submitting && (
+                            <MoveRightIcon className='h-4 w-4' />
+                        )}
+                    </Button>
+                )}
+                {state.succeeded && (
+                    <Button
+                        variant={'secondary'}
+                        className='pointer-events-none w-full'
+                    >
+                        You've successfully joined the waitlist! 🔥
+                    </Button>
+                )}
+                {!state.succeeded && (
+                    <p className='w-full text-center text-sm text-muted-foreground'>
+                        Join a waitlist of 200+ members!
+                    </p>
+                )}
+                {state.succeeded && (
+                    <p className='w-full text-center text-sm text-muted-foreground'>
+                        Welcome to the future of SaaS!
+                    </p>
+                )}
+                <p className='w-full text-center text-sm text-muted-foreground'></p>
+            </form>
+            <span className='mx-auto h-44 w-[1px]  rounded-full  bg-gradient-to-b from-transparent to-primary'></span>
         </main>
     )
 }

@@ -12,7 +12,7 @@ import {
 const Navbar = () => {
     const [colorTheme, setTheme] = useToggleTheme()
     return (
-        <div className='border-b px-5 py-3'>
+        <div className='border-b px-5 py-2 dark:border-white/10'>
             <nav className='mx-auto flex max-w-7xl items-center justify-between'>
                 <Link to='/' className='flex items-center gap-2'>
                     <img src={saasstellar} alt='' width={28} height={26} />
