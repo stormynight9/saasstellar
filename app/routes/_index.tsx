@@ -117,10 +117,10 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
     return (
-        <>
+        <div className='dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsla(20.5,90.2%,48.2%,0.3),#ffffff00)]'>
             <Navbar />
             <Hero />
             <Cms />
-        </>
+        </div>
     )
 }
