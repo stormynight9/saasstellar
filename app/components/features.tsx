@@ -6,6 +6,7 @@ import {
     ShieldCheckIcon,
     ZapIcon,
 } from 'lucide-react'
+import React from 'react'
 import FeatureCard from './feature-card'
 
 export interface FeatureDataInterface {
