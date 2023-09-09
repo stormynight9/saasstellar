@@ -22,39 +22,39 @@ const featuresData: FeatureDataInterface[] = [
         description:
             'Customize the platform to your needs and make it your own.',
         icon: <SettingsIcon size={28} className='text-blue-500' />,
-        backgroundColor: 'from-blue-500/20',
+        backgroundColor: 'from-blue-500/20 to-blue-500/5',
     },
     {
         title: 'Secure and reliable',
         description: 'We take security seriously and ensure your data is safe.',
         icon: <ShieldCheckIcon size={28} className='text-green-500' />,
-        backgroundColor: 'from-green-500/20',
+        backgroundColor: 'from-green-500/20 to-green-500/5',
     },
     {
         title: 'Easy to use',
         description: 'The platform is easy to use and requires no training.',
         icon: <ZapIcon size={28} className=' text-yellow-500' />,
-        backgroundColor: 'from-yellow-500/20',
+        backgroundColor: 'from-yellow-500/20 to-yellow-500/5',
     },
     {
         title: 'Powerful integrations',
         description:
             'Integrate with your favorite tools and services, and more.',
         icon: <BlocksIcon className='text-red-500' />,
-        backgroundColor: 'from-red-500/20',
+        backgroundColor: 'from-red-500/20 to-red-500/5',
     },
     {
         title: 'Affordable pricing',
         description:
             'We offer affordable pricing plans for all business sizes.',
         icon: <DollarSignIcon className='text-pink-500' />,
-        backgroundColor: 'from-pink-500/20',
+        backgroundColor: 'from-pink-500/20 to-pink-500/5',
     },
     {
         title: '24/7 support',
         description: 'Our support team is available 24/7 to help you out.',
         icon: <MessagesSquareIcon size={28} className='text-purple-500' />,
-        backgroundColor: 'from-purple-500/20',
+        backgroundColor: 'from-purple-500/20 to-purple-500/5',
     },
 ]
 
