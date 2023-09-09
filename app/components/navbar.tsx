@@ -1,13 +1,8 @@
 import { Link } from '@remix-run/react'
-import { MenuIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+import { GithubIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+import { Button } from '~/components/ui/button'
 import useToggleTheme from '~/hooks/useToggleTheme'
 import saasstellar from '../assets/saasstellar.svg'
-import { Button } from '~/components/ui/button'
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from '~/components/ui/popover'
 
 const Navbar = () => {
     const [colorTheme, setTheme] = useToggleTheme()
@@ -18,7 +13,7 @@ const Navbar = () => {
                     <img src={saasstellar} alt='' width={28} height={26} />
                     <span className='text-lg font-semibold'>SaaSStellar</span>
                 </Link>
-                <div className='flex items-center gap-6'>
+                <div className='flex items-center gap-5'>
                     <ul className='hidden items-center gap-1 md:flex'>
                         <li>
                             <Button
@@ -38,19 +33,17 @@ const Navbar = () => {
                                 <Link to={'/'}>Contact</Link>
                             </Button>
                         </li>
-                        <li>
-                            <Button
-                                variant={'link'}
-                                asChild
-                                className='text-sm font-medium text-muted-foreground hover:text-muted-foreground/90 hover:underline'
-                            >
-                                <Link to={'/'}>Login</Link>
-                            </Button>
-                        </li>
                     </ul>
-                    <Button variant={'black'} className='hidden md:inline-flex'>
-                        Get started for free
-                    </Button>
+                    <a
+                        href='https://www.github.com/stormynight9'
+                        target='_blank'
+                        rel='noreferrer'
+                        aria-label='my github'
+                    >
+                        <Button variant='outline' size='icon'>
+                            <GithubIcon className='h-5 w-5' />
+                        </Button>
+                    </a>
                     <Button
                         onClick={() => {
                             setTheme(colorTheme)
@@ -65,55 +58,6 @@ const Navbar = () => {
                             <MoonStarIcon className='h-5 w-5' />
                         )}
                     </Button>
-
-                    <Popover>
-                        <PopoverTrigger asChild>
-                            <Button
-                                variant={'outline'}
-                                size={'icon'}
-                                className='inline-flex md:hidden'
-                                aria-label='open menu'
-                            >
-                                <MenuIcon className='h-5 w-5' />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className='w-80' collisionPadding={18}>
-                            <ul className='flex flex-col items-center gap-1'>
-                                <li>
-                                    <Button
-                                        variant={'link'}
-                                        asChild
-                                        className='text-sm font-medium text-muted-foreground hover:text-muted-foreground/90 hover:underline'
-                                    >
-                                        <Link to={'/'}>Pricing</Link>
-                                    </Button>
-                                </li>
-                                <li>
-                                    <Button
-                                        variant={'link'}
-                                        asChild
-                                        className='text-sm font-medium text-muted-foreground hover:text-muted-foreground/90 hover:underline'
-                                    >
-                                        <Link to={'/'}>Contact</Link>
-                                    </Button>
-                                </li>
-                                <li>
-                                    <Button
-                                        variant={'link'}
-                                        asChild
-                                        className='text-sm font-medium text-muted-foreground hover:text-muted-foreground/90 hover:underline'
-                                    >
-                                        <Link to={'/'}>Login</Link>
-                                    </Button>
-                                </li>
-                                <li>
-                                    <Button variant={'black'}>
-                                        Get started for free
-                                    </Button>
-                                </li>
-                            </ul>
-                        </PopoverContent>
-                    </Popover>
                 </div>
             </nav>
         </div>
