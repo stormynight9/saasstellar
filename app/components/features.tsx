@@ -12,7 +12,7 @@ export interface FeatureDataInterface {
     title: string
     description: string
     icon: React.ReactNode
-    backgroundColor?: string
+    backgroundColor: string
 }
 
 const featuresData: FeatureDataInterface[] = [
@@ -100,9 +100,10 @@ const Features = () => {
                             <FeatureCard
                                 title={feature.title}
                                 description={feature.description}
-                                icon={feature.icon}
                                 backgroundColor={feature.backgroundColor}
-                            />
+                            >
+                                {feature.icon}
+                            </FeatureCard>
                         </li>
                     ))}
                 </ul>

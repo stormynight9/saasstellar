@@ -1,12 +1,17 @@
 import { cn } from '~/lib/utils'
-import { type FeatureDataInterface } from './features'
+interface FeatureCardProps {
+    title: string
+    description: string
+    children: React.ReactNode
+    backgroundColor: string
+}
 
 const FeatureCard = ({
     title,
     description,
-    icon,
+    children,
     backgroundColor,
-}: FeatureDataInterface) => {
+}: FeatureCardProps) => {
     return (
         <div
             className={cn(
@@ -20,7 +25,7 @@ const FeatureCard = ({
                     backgroundColor
                 )}
             >
-                {icon}
+                {children}
             </span>
             <div className='flex flex-col gap-3'>
                 <h2 className='scroll-m-20 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-2xl font-semibold tracking-tight text-transparent'>
