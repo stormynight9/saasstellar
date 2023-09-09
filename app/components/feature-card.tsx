@@ -1,22 +1,16 @@
-import React from 'react'
 import { cn } from '~/lib/utils'
-interface FeatureCardProps {
-    title: string
-    description: string
-    children: React.ReactNode
-    backgroundColor: string
-}
+import { type FeatureCardProps } from '~/types/feature-card'
 
 const FeatureCard = ({
     title,
     description,
-    children,
+    icon,
     backgroundColor,
 }: FeatureCardProps) => {
     return (
         <div
             className={cn(
-                'flex max-w-sm flex-col gap-5 rounded-md bg-gradient-to-b via-transparent to-transparent p-5 text-center md:bg-gradient-to-br md:text-left',
+                'flex max-w-sm flex-col gap-5 rounded-md bg-gradient-to-b via-transparent p-5 text-center md:bg-gradient-to-br md:text-left',
                 backgroundColor
             )}
         >
@@ -26,7 +20,7 @@ const FeatureCard = ({
                     backgroundColor
                 )}
             >
-                {children}
+                {icon}
             </span>
             <div className='flex flex-col gap-3'>
                 <h2 className='scroll-m-20 bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-2xl font-semibold tracking-tight text-transparent'>

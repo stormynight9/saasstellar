@@ -6,17 +6,10 @@ import {
     ShieldCheckIcon,
     ZapIcon,
 } from 'lucide-react'
-import React from 'react'
+import { type FeatureCardProps } from '~/types/feature-card'
 import FeatureCard from './feature-card'
 
-export interface FeatureDataInterface {
-    title: string
-    description: string
-    icon: React.ReactNode
-    backgroundColor: string
-}
-
-const featuresData: FeatureDataInterface[] = [
+const featuresData: FeatureCardProps[] = [
     {
         title: 'Highly customizable',
         description:
@@ -102,9 +95,8 @@ const Features = () => {
                                 title={feature.title}
                                 description={feature.description}
                                 backgroundColor={feature.backgroundColor}
-                            >
-                                {feature.icon}
-                            </FeatureCard>
+                                icon={feature.icon}
+                            />
                         </li>
                     ))}
                 </ul>
