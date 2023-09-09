@@ -16,13 +16,13 @@ const FeatureCard = ({
     return (
         <div
             className={cn(
-                'flex max-w-sm flex-col gap-5 rounded-md bg-gradient-to-br via-transparent to-transparent p-5 text-left',
+                'flex max-w-sm flex-col gap-5 rounded-md bg-gradient-to-b via-transparent to-transparent p-5 text-center md:bg-gradient-to-br md:text-left',
                 backgroundColor
             )}
         >
             <span
                 className={cn(
-                    'inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br to-transparent dark:border dark:border-white/10',
+                    'mx-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b to-transparent dark:border dark:border-white/10 md:ml-0 md:bg-gradient-to-br',
                     backgroundColor
                 )}
             >
