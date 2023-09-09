@@ -1,8 +1,8 @@
-import type React from 'react'
+import { type ReactNode } from 'react'
 
 export interface FeatureCardProps {
     title: string
     description: string
-    icon: React.ReactNode
+    icon: ReactNode
     backgroundColor: string
 }
