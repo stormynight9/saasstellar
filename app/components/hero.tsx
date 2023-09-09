@@ -9,10 +9,10 @@ const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
 
     return (
-        <main className='mx-auto mt-24 flex max-w-2xl flex-col gap-6 px-5 text-center'>
-            <p className='bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
+        <main className='mx-auto flex h-[calc(100vh-73px)] max-w-2xl flex-col justify-center gap-6 px-5 text-center'>
+            {/* <p className='bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
                 Unlock Your Potential
-            </p>
+            </p> */}
             <h1 className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                     Discover the
