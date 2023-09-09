@@ -1,8 +1,10 @@
 import type { V2_MetaFunction } from '@remix-run/node'
 import Cms from '~/components/cms'
 import Features from '~/components/features'
+import Footer from '~/components/footer'
 import Hero from '~/components/hero'
 import Navbar from '~/components/navbar'
+import Pricing from '~/components/pricing'
 
 export const meta: V2_MetaFunction = () => {
     return [
@@ -123,6 +125,8 @@ export default function Index() {
             <Hero />
             <Cms />
             <Features />
+            <Pricing />
+            <Footer />
         </div>
     )
 }
