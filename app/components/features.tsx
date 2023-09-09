@@ -57,8 +57,10 @@ const Features = () => {
         <section className='mx-auto mt-28 max-w-7xl px-5'>
             <div className='mx-auto flex max-w-2xl flex-col gap-6 text-center'>
                 <div>
-                    <p className='mb-4 text-primary'>Powerful Features</p>
-                    <h1 className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
+                    <span className='rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-orange-400 dark:bg-primary/25'>
+                        Powerful Features
+                    </span>
+                    <h1 className='mt-4 scroll-m-20  font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                             Advanced{' '}
                         </span>
