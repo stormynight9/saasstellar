@@ -54,7 +54,7 @@ const Pricing = () => {
                     </Label>
                 </div>
                 <div className='mt-10 flex flex-col items-center gap-6 lg:flex-row lg:items-start'>
-                    <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-bl from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-bl before:from-primary/30 before:to-transparent'>
+                    <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-bl from-primary/10 via-transparent to-transparent p-8 text-left before:bg-gradient-to-bl before:from-primary/30 before:to-transparent'>
                         <div className='flex flex-col gap-3 text-left'>
                             <p>Basic</p>
                             <div className='flex items-start gap-2'>
