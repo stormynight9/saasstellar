@@ -9,7 +9,7 @@ const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
 
     return (
-        <main className='mx-auto flex h-[calc(100vh-73px)] max-w-2xl flex-col justify-center gap-6 px-5 text-center'>
+        <main className='mx-auto my-10 flex min-h-[calc(100vh-73px)] max-w-2xl flex-col justify-center gap-6 px-5 text-center lg:my-0'>
             {/* <p className='bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
                 Unlock Your Potential
             </p> */}
