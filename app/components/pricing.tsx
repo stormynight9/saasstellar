@@ -45,6 +45,7 @@ const Pricing = () => {
                         checked={checked}
                         onCheckedChange={() => setChecked(!checked)}
                         className='data-[state=unchecked]:bg-primary'
+                        aria-label='toggle pricing'
                     />
                     <Label
                         htmlFor='price-toggle'
