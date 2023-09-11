@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import {
     BlocksIcon,
     DollarSignIcon,
@@ -57,10 +58,22 @@ const Features = () => {
         <section className='mx-auto mt-28 max-w-7xl px-5'>
             <div className='mx-auto flex max-w-2xl flex-col gap-6 text-center'>
                 <div>
-                    <span className='rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-orange-400 dark:bg-primary/25'>
+                    <motion.span
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: 'easeOut' }}
+                        className='rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-orange-400 dark:bg-primary/25'
+                    >
                         Powerful Features
-                    </span>
-                    <h1 className='mt-4 scroll-m-20  font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
+                    </motion.span>
+                    <motion.h1
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: 'easeOut' }}
+                        className='mt-4 scroll-m-20  font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'
+                    >
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                             Advanced{' '}
                         </span>
@@ -76,9 +89,15 @@ const Features = () => {
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                             Excellence
                         </span>
-                    </h1>
+                    </motion.h1>
                 </div>
-                <p className='text-lg text-muted-foreground'>
+                <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+                    className='text-lg text-muted-foreground'
+                >
                     <span className='hidden lg:block'>
                         Explore a diverse range of cutting-edge tools
                         meticulously crafted to drive your business towards
@@ -88,19 +107,28 @@ const Features = () => {
                         Explore a diverse range of cutting-edge tools crafted
                         for business success.
                     </span>
-                </p>
+                </motion.p>
             </div>
             <div>
                 <ul className='mt-20 grid place-content-center gap-20 md:grid-cols-2 lg:grid-cols-3'>
-                    {featuresData.map((feature, i) => (
-                        <li key={i}>
+                    {featuresData.map((feature, idx) => (
+                        <motion.li
+                            initial={{ opacity: 0, y: -5 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 1,
+                                ease: 'easeOut',
+                                delay: idx * 0.15,
+                            }}
+                            key={idx}
+                        >
                             <FeatureCard
                                 title={feature.title}
                                 description={feature.description}
                                 backgroundColor={feature.backgroundColor}
                                 icon={feature.icon}
                             />
-                        </li>
+                        </motion.li>
                     ))}
                 </ul>
             </div>

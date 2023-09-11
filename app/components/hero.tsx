@@ -1,19 +1,23 @@
 import { useForm } from '@formspree/react'
+import { motion } from 'framer-motion'
 import { Loader2Icon, MoveRightIcon } from 'lucide-react'
+import { cn } from '~/lib/utils'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
-import { cn } from '~/lib/utils'
 
 const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
 
     return (
         <main className='mx-auto my-10 flex min-h-[calc(100vh-73px)] max-w-2xl flex-col justify-center gap-6 px-5 text-center lg:my-0'>
-            {/* <p className='bg-gradient-to-r from-primary to-rose-600  bg-clip-text font-caveat text-2xl font-bold text-transparent'>
-                Unlock Your Potential
-            </p> */}
-            <h1 className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'>
+            <motion.h1
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'
+            >
                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                     Discover the
                 </span>{' '}
@@ -29,16 +33,26 @@ const Hero = () => {
                 <span className='bg-gradient-to-r from-primary to-rose-600 bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl'>
                     Simplicity.
                 </span>
-            </h1>
-            <p className='text-lg text-muted-foreground'>
+            </motion.h1>
+            <motion.p
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+                className='text-lg text-muted-foreground'
+            >
                 Welcome to <span className='text-primary'>SaaSStellar</span>,
                 your gateway to streamlined operations, innovation, enhanced
                 productivity, and limitless growth opportunities.{' '}
                 <span className='hidden lg:block'>
                     Discover a brighter future with us.
                 </span>
-            </p>
-            <form
+            </motion.p>
+            <motion.form
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }}
                 onSubmit={handleSubmit}
                 className='mx-auto mt-8 flex w-full max-w-sm flex-col items-end space-y-2'
             >
@@ -93,8 +107,14 @@ const Hero = () => {
                     </p>
                 )}
                 <p className='w-full text-center text-sm text-muted-foreground'></p>
-            </form>
-            <span className='mx-auto h-44 w-[1px]  rounded-full  bg-gradient-to-b from-transparent to-primary'></span>
+            </motion.form>
+            <motion.span
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+                className='mx-auto h-44 w-[1px]  rounded-full  bg-gradient-to-b from-transparent to-primary'
+            ></motion.span>
         </main>
     )
 }

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import Drupal from '~/components/icons/drupal'
 import Framer from '~/components/icons/framer'
@@ -8,6 +9,7 @@ import Storyblok from '~/components/icons/storyblok'
 import Strapi from '~/components/icons/strapi'
 import Typedream from '~/components/icons/typedream'
 import Wordpress from '~/components/icons/wordpress'
+
 import {
     Tooltip,
     TooltipContent,
@@ -57,19 +59,38 @@ const Cms = () => {
 
     return (
         <div className='mx-5'>
-            <p className='mb-8 text-center text-sm font-medium text-muted-foreground'>
+            <motion.p
+                initial={{ opacity: 0, y: -5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 1,
+                    ease: 'easeOut',
+                }}
+                className='mb-8 text-center text-sm font-medium text-muted-foreground'
+            >
                 INTEGRATED WITH 10+ CONTENT MANAGEMENT SYSTEMS
-            </p>
-            <div className='mx-auto flex flex-wrap items-center justify-center gap-8 fill-foreground lg:gap-x-14'>
-                {cms.map((item) => (
+            </motion.p>
+            <ul className='mx-auto flex flex-wrap items-center justify-center gap-8 fill-foreground lg:gap-x-14'>
+                {cms.map((item, idx) => (
                     <React.Fragment key={item.name}>
                         <TooltipProvider delayDuration={100}>
                             <Tooltip>
                                 <TooltipTrigger
                                     aria-label={item.name}
                                     className='cursor-default'
+                                    asChild
                                 >
-                                    {item.component}
+                                    <motion.li
+                                        initial={{ opacity: 0, y: -5 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 1,
+                                            ease: 'easeOut',
+                                            delay: idx * 0.15,
+                                        }}
+                                    >
+                                        {item.component}
+                                    </motion.li>
                                 </TooltipTrigger>
                                 <TooltipContent side='bottom'>
                                     <p>{item.name}</p>
@@ -78,7 +99,7 @@ const Cms = () => {
                         </TooltipProvider>
                     </React.Fragment>
                 ))}
-            </div>
+            </ul>
         </div>
     )
 }
