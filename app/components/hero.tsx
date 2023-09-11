@@ -52,7 +52,7 @@ const Hero = () => {
                     <Input
                         required
                         type='email'
-                        placeholder='Email address...'
+                        placeholder='john.doe@example.com'
                         name='email'
                     />
                 </div>
