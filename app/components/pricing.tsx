@@ -54,8 +54,8 @@ const Pricing = () => {
                         Annually
                     </Label>
                 </div>
-                <div className='mt-10 flex flex-col items-center gap-6 lg:flex-row lg:items-start'>
-                    <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-bl from-primary/10 via-transparent to-transparent p-8 text-left before:bg-gradient-to-bl before:from-primary/30 before:to-primary/5'>
+                <div className='mt-10 flex flex-col items-center gap-6 lg:flex-row lg:items-stretch lg:justify-around lg:px-6'>
+                    <div className='gradient-border relative w-full max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-bl from-primary/10 via-transparent to-transparent p-8 text-left before:bg-gradient-to-bl before:from-primary/30 before:to-primary/5 lg:max-w-none'>
                         <div className='flex flex-col gap-3 text-left'>
                             <p>Basic</p>
                             <div className='flex items-start gap-2'>
@@ -100,7 +100,7 @@ const Pricing = () => {
                             Get started
                         </Button>
                     </div>
-                    <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-b from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-b before:from-primary before:to-primary/10'>
+                    <div className='gradient-border relative w-full max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-b from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-b before:from-primary before:to-primary/10 lg:max-w-none'>
                         <div className='flex flex-col gap-3 text-left'>
                             <p>Pro</p>
                             <div className='flex items-start gap-2'>
@@ -148,7 +148,7 @@ const Pricing = () => {
                         </ul>
                         <Button className='mt-8 w-full'>Upgrade now</Button>
                     </div>
-                    <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-br from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-br before:from-primary/30 before:to-primary/5'>
+                    <div className='gradient-border relative max-w-sm flex-grow basis-0 rounded-md bg-gradient-to-br from-primary/10 via-transparent to-transparent p-8 before:bg-gradient-to-br before:from-primary/30 before:to-primary/5 lg:max-w-none'>
                         <div className='flex flex-col gap-3 text-left'>
                             <p>Premium</p>
                             <div className='flex items-start gap-2'>
