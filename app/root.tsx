@@ -43,7 +43,7 @@ export default function App() {
                 <Meta />
                 <Links />
             </head>
-            <body className='bg-background font-dm antialiased'>
+            <body className='relative overflow-x-hidden bg-background font-dm antialiased'>
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
