@@ -66,6 +66,7 @@ const Hero = () => {
                     <Input
                         required
                         type='email'
+                        id='email'
                         placeholder='john.doe@example.com'
                         name='email'
                     />
@@ -82,6 +83,7 @@ const Hero = () => {
                         {state.submitting && (
                             <Loader2Icon className='mr-2 h-4 w-4 animate-spin' />
                         )}
+                        {state.submitting && 'Joining'}
                         {!state.submitting && 'Join the waitlist'}
                         {!state.submitting && (
                             <MoveRightIcon className='h-4 w-4' />

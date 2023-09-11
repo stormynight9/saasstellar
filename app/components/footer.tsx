@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className='mt-16 flex h-32 flex-col items-center justify-between bg-gradient-to-b from-transparent to-primary/20'>
+        <footer className='mt-24 flex h-32 flex-col items-center justify-between bg-gradient-to-b from-transparent to-primary/20'>
             <div className='p-5 text-center'>
                 Looking for a frontend developer with React/Astro skills? Reach
                 out to me at{' '}

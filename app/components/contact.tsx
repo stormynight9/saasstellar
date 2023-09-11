@@ -1,13 +1,15 @@
-import { LinkedinIcon, TwitterIcon } from 'lucide-react'
+import { LinkedinIcon, Loader2Icon, TwitterIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
 import Discord from './icons/discord'
+import { useForm } from '@formspree/react'
 
 const Contact = () => {
+    const [state, handleSubmit] = useForm('xpzgladz')
     return (
-        <section className='mx-auto mt-28 flex max-w-7xl flex-col items-center gap-20 px-5 lg:flex-row'>
+        <section className='mx-auto mt-40 flex max-w-7xl flex-col items-center gap-20 px-5 lg:flex-row'>
             <div className='mx-auto flex max-w-2xl flex-grow basis-0 flex-col gap-6'>
                 <div>
                     <h1 className='mt-4 scroll-m-20  text-center font-inter text-4xl font-extrabold tracking-tight lg:text-left lg:text-5xl'>
@@ -60,7 +62,10 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div className='gradient-border relative flex w-full max-w-xl flex-grow basis-0 flex-col gap-4 rounded-md bg-gradient-to-br from-white/5 to-transparent p-6  before:bg-gradient-to-br before:from-white/5 before:to-transparent '>
+            <form
+                onSubmit={handleSubmit}
+                className='gradient-border relative flex w-full max-w-xl flex-grow basis-0 flex-col gap-4 rounded-md bg-gradient-to-br from-white/5 to-transparent p-6  before:bg-gradient-to-br before:from-white/5 before:to-transparent '
+            >
                 <div className='flex w-full flex-col gap-1.5'>
                     <Label
                         className='text-left text-muted-foreground'
@@ -71,15 +76,16 @@ const Contact = () => {
                     <Input
                         required
                         type='text'
+                        id='name'
                         placeholder='John Doe'
-                        name='name'
+                        name='fullname'
                         className='w-full'
                     />
                 </div>
                 <div className='flex w-full flex-col gap-1.5'>
                     <Label
                         className='text-left text-muted-foreground'
-                        htmlFor='email'
+                        htmlFor='contact-email'
                     >
                         Email
                     </Label>
@@ -87,7 +93,8 @@ const Contact = () => {
                         required
                         type='email'
                         placeholder='john.doe@example.com'
-                        name='email'
+                        name='contact-email'
+                        id='contact-email'
                         className='w-full'
                     />
                 </div>
@@ -98,10 +105,33 @@ const Contact = () => {
                     >
                         Message
                     </Label>
-                    <Textarea placeholder='Your message here...' id='message' />
+                    <Textarea
+                        required
+                        placeholder='Your message here...'
+                        id='message'
+                        name='message'
+                    />
                 </div>
-                <Button variant={'secondary'}>Send message</Button>
-            </div>
+                {!state.succeeded && (
+                    <Button variant={'secondary'} disabled={state.submitting}>
+                        {state.submitting && (
+                            <Loader2Icon className='mr-2 h-4 w-4 animate-spin' />
+                        )}
+                        {state.submitting && 'Sending'}
+                        {!state.succeeded &&
+                            !state.submitting &&
+                            'Send message'}
+                    </Button>
+                )}
+                {state.succeeded && (
+                    <Button
+                        variant={'secondary'}
+                        className='pointer-events-none'
+                    >
+                        Message sent!
+                    </Button>
+                )}
+            </form>
         </section>
     )
 }

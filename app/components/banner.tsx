@@ -2,9 +2,12 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import saasstellar from '../assets/saasstellar.svg'
+import { useForm } from '@formspree/react'
+import { Loader2Icon } from 'lucide-react'
 const Banner = () => {
+    const [state, handleSubmit] = useForm('mjvqrzpz')
     return (
-        <section className=' relative mt-28 flex flex-col items-center justify-between gap-10 bg-gradient-to-br from-primary/20 via-transparent to-primary/20'>
+        <section className=' relative mt-40 flex flex-col items-center justify-between gap-10 bg-gradient-to-br from-primary/20 via-transparent to-primary/20'>
             <div className='h-[1px] w-full bg-gradient-to-r from-primary to-transparent'></div>
             <div className='relative w-full max-w-7xl px-5'>
                 <div className='flex justify-between'>
@@ -35,27 +38,48 @@ const Banner = () => {
                             Unlock the potential of your business with
                             SaaSStellar. Experience simplified operations.
                         </p>
-                        <div className='mx-auto flex w-full max-w-md flex-col items-end gap-2 lg:mx-0 lg:flex-row'>
+                        <form
+                            onSubmit={handleSubmit}
+                            className='mx-auto flex w-full max-w-md flex-col items-end gap-2 lg:mx-0 lg:flex-row'
+                        >
                             <div className='flex w-full  max-w-sm basis-2/3 flex-col items-start gap-1.5'>
                                 <Label
                                     className='text-left text-muted-foreground'
-                                    htmlFor='email'
+                                    htmlFor='email-banner'
                                 >
                                     Want an early invite?
                                 </Label>
                                 <Input
+                                    name='email-banner'
+                                    required
+                                    id='email-banner'
                                     type='email'
                                     placeholder='john.doe@example.com'
                                 />
                             </div>
 
-                            <Button
-                                type='submit'
-                                className='w-full max-w-sm lg:w-fit'
-                            >
-                                Join the waitlist
-                            </Button>
-                        </div>
+                            {!state.succeeded && (
+                                <Button
+                                    type='submit'
+                                    className='w-full max-w-sm lg:w-fit'
+                                    disabled={state.submitting}
+                                >
+                                    {state.submitting && (
+                                        <Loader2Icon className='mr-2 h-4 w-4 animate-spin' />
+                                    )}
+                                    {state.submitting && 'Joining'}
+                                    {!state.submitting && 'Join the waitlist'}
+                                </Button>
+                            )}
+                            {state.succeeded && (
+                                <Button
+                                    variant={'secondary'}
+                                    className='pointer-events-none w-full max-w-sm lg:w-fit'
+                                >
+                                    You're in! 🔥
+                                </Button>
+                            )}
+                        </form>
                     </div>
                     <img
                         src={saasstellar}

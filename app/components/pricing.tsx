@@ -10,7 +10,7 @@ const Pricing = () => {
     const [checked, setChecked] = useState(false)
 
     return (
-        <section className='mx-auto mb-8 mt-28 px-5 dark:bg-[radial-gradient(ellipse_40%_50%_at_50%_-20%,hsla(20.5,90.2%,48.2%,0.3),#ffffff00)]'>
+        <section className='mx-auto mb-8 mt-40 px-5 dark:bg-[radial-gradient(ellipse_40%_50%_at_50%_-20%,hsla(20.5,90.2%,48.2%,0.3),#ffffff00)]'>
             <div className='mx-auto mb-16 h-[1px] w-full max-w-2xl bg-gradient-to-r from-transparent via-primary to-transparent'></div>
             <div className='mx-auto flex max-w-7xl flex-col gap-6 text-center'>
                 <div>
