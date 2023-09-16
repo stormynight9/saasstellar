@@ -1,4 +1,4 @@
-import type { V2_MetaFunction } from '@remix-run/node'
+import type { MetaFunction } from '@remix-run/node'
 import Banner from '~/components/banner'
 import Cms from '~/components/cms'
 import Contact from '~/components/contact'
@@ -8,7 +8,7 @@ import Hero from '~/components/hero'
 import Navbar from '~/components/navbar'
 import Pricing from '~/components/pricing'
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
     return [
         { title: 'SaaSStellar' },
         {
