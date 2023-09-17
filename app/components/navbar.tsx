@@ -1,11 +1,19 @@
 import { Link } from '@remix-run/react'
-import { GithubIcon, MoonStarIcon, SunIcon } from 'lucide-react'
+import { GithubIcon } from 'lucide-react'
 import { Button } from '~/components/ui/button'
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '~/components/ui/select'
 import useToggleTheme from '~/hooks/useToggleTheme'
 import saasstellar from '../assets/saasstellar.svg'
 
 const Navbar = () => {
-    const [colorTheme, setTheme] = useToggleTheme()
+    const [theme, setTheme] = useToggleTheme()
     return (
         <div className='border-b px-5 py-2 dark:border-white/10'>
             <nav className='mx-auto flex max-w-7xl items-center justify-between'>
@@ -43,7 +51,7 @@ const Navbar = () => {
                     >
                         <GithubIcon className='h-5 w-5' />
                     </a>
-                    <Button
+                    {/* <Button
                         onClick={() => {
                             setTheme(colorTheme)
                         }}
@@ -56,7 +64,22 @@ const Navbar = () => {
                         ) : (
                             <MoonStarIcon className='h-5 w-5' />
                         )}
-                    </Button>
+                    </Button> */}
+                    <Select
+                        onValueChange={(theme: 'blue' | 'orange') =>
+                            setTheme(theme)
+                        }
+                    >
+                        <SelectTrigger className='w-[180px]'>
+                            <SelectValue placeholder='Customize' />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectGroup>
+                                <SelectItem value='blue'>blue</SelectItem>
+                                <SelectItem value='orange'>Orange</SelectItem>
+                            </SelectGroup>
+                        </SelectContent>
+                    </Select>
                 </div>
             </nav>
         </div>
