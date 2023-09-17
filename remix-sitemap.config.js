@@ -1,5 +1,5 @@
 /** @type {import('remix-sitemap').Config} */
-module.exports = {
+export default {
     siteUrl: 'https://saasstellar.vercel.app',
     generateRobotsTxt: true,
 }
