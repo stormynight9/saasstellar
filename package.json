@@ -1,6 +1,7 @@
 {
     "private": true,
     "sideEffects": false,
+    "type": "module",
     "scripts": {
         "build": "npm-run-all build:*",
         "build:remix": "pnpm partytown && remix build",
