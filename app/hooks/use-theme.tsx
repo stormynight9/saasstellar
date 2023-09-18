@@ -11,6 +11,23 @@ export const changeTheme = (theme: string) => {
             themeObject?.cssVars.dark[property]
         )
     })
+    if (typeof window !== 'undefined') {
+        document.cookie = `theme=${theme}`
+    }
+}
+
+export const getTheme = (): ThemeName => {
+    let theme: ThemeName = 'blue'
+    if (typeof window !== 'undefined') {
+        theme = localStorage.getItem('theme') as ThemeName
+        if (theme !== null) {
+            theme = theme.replace(/['"]+/g, '') as ThemeName
+            console.log(theme)
+            return theme
+        }
+        return 'blue'
+    }
+    return theme
 }
 
 const themeAtom = atomWithStorage<ThemeName>('theme', 'blue')

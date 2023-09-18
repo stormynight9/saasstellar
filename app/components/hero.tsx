@@ -6,11 +6,12 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import useTheme from '~/hooks/use-theme'
+import Leaf from './icons/leaf'
+import Flower from './icons/flower'
 
 const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
-    const [theme, setTheme] = useTheme()
-    console.log('hero', theme)
+    const [theme] = useTheme()
 
     return (
         <main className='mx-auto my-10 flex min-h-[calc(100vh-73px)] max-w-2xl flex-col justify-center gap-6 px-5 text-center lg:my-0'>
@@ -19,7 +20,10 @@ const Hero = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className='scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'
+                className={cn(
+                    'scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl',
+                    theme === 'green' && 'pb-5 lg:pb-10'
+                )}
             >
                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                     Discover the
@@ -35,12 +39,29 @@ const Hero = () => {
                 </span>
                 <span
                     className={cn(
-                        'bg-gradient-to-r from-primary bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl',
+                        'relative bg-gradient-to-r from-primary bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl',
                         theme === 'orange' && 'to-rose-600',
-                        theme === 'blue' && 'to-purple-600'
+                        theme === 'blue' && 'to-purple-600',
+                        theme === 'green' && 'to-emerald-600',
+                        theme === 'red' && 'to-rose-600',
+                        theme === 'yellow' && 'to-yellow-600',
+                        theme === 'violet' && 'to-violet-600',
+                        theme === 'gray' && 'to-gray-600',
+                        theme === 'neutral' && 'to-neutral-600',
+                        theme === 'slate' && 'to-slate-600',
+                        theme === 'stone' && 'to-stone-600',
+                        theme === 'zinc' && 'to-zinc-600',
+                        theme === 'rose' && 'to-pink-600'
                     )}
                 >
                     Simplicity.
+                    {theme === 'green' && (
+                        <Leaf
+                            linearFrom={'text-primary'}
+                            linearTo={'text-emerald-600'}
+                            className='absolute -bottom-6 left-0 right-0 mx-auto h-auto w-full text-center opacity-80 lg:-bottom-12'
+                        />
+                    )}
                 </span>
             </motion.h1>
             <motion.p
@@ -119,13 +140,30 @@ const Hero = () => {
                 )}
                 <p className='w-full text-center text-sm text-muted-foreground'></p>
             </motion.form>
+            {theme !== 'rose' && (
+                <motion.span
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+                    className='mx-auto h-44 w-[1px] rounded-full  bg-gradient-to-b from-transparent to-primary'
+                ></motion.span>
+            )}
             <motion.span
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
-                className='mx-auto h-44 w-[1px]  rounded-full  bg-gradient-to-b from-transparent to-primary'
-            ></motion.span>
+                className='mx-auto'
+            >
+                {theme === 'rose' && (
+                    <Flower
+                        className='h-44 rotate-180'
+                        linearFrom='text-primary'
+                        linearTo='text-primary/10   '
+                    />
+                )}
+            </motion.span>
         </main>
     )
 }

@@ -11,14 +11,34 @@ import {
 import useTheme, { changeTheme } from '~/hooks/use-theme'
 import saasstellar from '../assets/saasstellar.svg'
 import { type ThemeName } from '~/registry/themes'
+import Saastellar from './icons/saasstellar'
+import { cn } from '~/lib/utils'
 
 const Navbar = () => {
-    const [, setTheme] = useTheme()
+    const [theme, setTheme] = useTheme()
     return (
         <div className='px-5 py-2'>
             <nav className='mx-auto flex max-w-7xl items-center justify-between'>
                 <Link to='/' className='flex items-center gap-2'>
-                    <img src={saasstellar} alt='' width={28} height={26} />
+                    {/* <img src={saasstellar} alt='' width={28} height={26} /> */}
+                    <Saastellar
+                        linearFrom='text-primary'
+                        linearTo={cn(
+                            'text-primary',
+                            theme === 'zinc' && 'text-zinc-600',
+                            theme === 'slate' && 'text-slate-600',
+                            theme === 'stone' && 'text-stone-600',
+                            theme === 'gray' && 'text-gray-600',
+                            theme === 'neutral' && 'text-neutral-600',
+                            theme === 'red' && 'text-red-600',
+                            theme === 'rose' && 'text-pink-600',
+                            theme === 'orange' && 'text-rose-600',
+                            theme === 'green' && 'text-emerald-600',
+                            theme === 'blue' && 'text-purple-600',
+                            theme === 'yellow' && 'text-yellow-600',
+                            theme === 'violet' && 'text-violet-600'
+                        )}
+                    />
                     <span className='hidden text-lg font-semibold md:block'>
                         SaaSStellar
                     </span>
@@ -38,27 +58,28 @@ const Navbar = () => {
                             changeTheme(theme)
                             setTheme(theme)
                         }}
+                        value={theme}
                     >
                         <SelectTrigger className='w-[180px]'>
                             <SelectValue placeholder='Customize' />
                         </SelectTrigger>
-                        <SelectContent className='bg-popover/70 backdrop-blur-sm'>
+                        <SelectContent className=''>
                             <SelectItem value='zinc'>
-                                <span className='flex items-center gap-2'>
+                                <span className='pointer-events-none flex items-center gap-2'>
                                     <span className='h-4 w-4 rounded-full bg-zinc-600 p-1'></span>{' '}
                                     <span>Zinc</span>
                                 </span>
                             </SelectItem>
                             <SelectItem value='slate'>
                                 {' '}
-                                <span className='flex items-center gap-2'>
+                                <span className='pointer-events-none flex items-center gap-2'>
                                     <span className='h-4 w-4 rounded-full bg-slate-600 p-1'></span>{' '}
                                     <span>Slate</span>
                                 </span>
                             </SelectItem>
                             <SelectItem value='stone'>
                                 {' '}
-                                <span className='flex items-center gap-2'>
+                                <span className='pointer-events-none flex items-center gap-2'>
                                     <span className='h-4 w-4 rounded-full bg-stone-600 p-1'></span>{' '}
                                     <span>Stone</span>
                                 </span>
