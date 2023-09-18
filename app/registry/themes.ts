@@ -634,3 +634,4 @@ export const themes = [
 ] as const
 
 export type Theme = (typeof themes)[number]
+export type ThemeName = (typeof themes)[number]['name']

@@ -1,6 +1,5 @@
 import { Link } from '@remix-run/react'
 import { GithubIcon } from 'lucide-react'
-import { Button } from '~/components/ui/button'
 import {
     Select,
     SelectContent,
@@ -9,39 +8,22 @@ import {
     SelectTrigger,
     SelectValue,
 } from '~/components/ui/select'
-import useToggleTheme from '~/hooks/useToggleTheme'
+import useTheme, { changeTheme } from '~/hooks/use-theme'
 import saasstellar from '../assets/saasstellar.svg'
+import { type ThemeName } from '~/registry/themes'
 
 const Navbar = () => {
-    const [theme, setTheme] = useToggleTheme()
+    const [, setTheme] = useTheme()
     return (
-        <div className='border-b px-5 py-2 dark:border-white/10'>
+        <div className='px-5 py-2'>
             <nav className='mx-auto flex max-w-7xl items-center justify-between'>
                 <Link to='/' className='flex items-center gap-2'>
                     <img src={saasstellar} alt='' width={28} height={26} />
-                    <span className='text-lg font-semibold'>SaaSStellar</span>
+                    <span className='hidden text-lg font-semibold md:block'>
+                        SaaSStellar
+                    </span>
                 </Link>
                 <div className='flex items-center gap-5'>
-                    <ul className='hidden items-center gap-1 md:flex'>
-                        <li>
-                            <Button
-                                variant={'link'}
-                                asChild
-                                className='text-sm font-medium text-muted-foreground hover:text-muted-foreground/90 hover:underline'
-                            >
-                                <Link to={'/'}>Pricing</Link>
-                            </Button>
-                        </li>
-                        <li>
-                            <Button
-                                variant={'link'}
-                                asChild
-                                className='text-sm font-medium text-muted-foreground hover:text-muted-foreground/90 hover:underline'
-                            >
-                                <Link to={'/'}>Contact</Link>
-                            </Button>
-                        </li>
-                    </ul>
                     <a
                         href='https://www.github.com/stormynight9'
                         target='_blank'
@@ -51,33 +33,99 @@ const Navbar = () => {
                     >
                         <GithubIcon className='h-5 w-5' />
                     </a>
-                    {/* <Button
-                        onClick={() => {
-                            setTheme(colorTheme)
-                        }}
-                        variant='outline'
-                        size='icon'
-                        aria-label='toggle theme'
-                    >
-                        {colorTheme === 'light' ? (
-                            <SunIcon className='h-5 w-5' />
-                        ) : (
-                            <MoonStarIcon className='h-5 w-5' />
-                        )}
-                    </Button> */}
                     <Select
-                        onValueChange={(theme: 'blue' | 'orange') =>
+                        onValueChange={(theme: ThemeName) => {
+                            changeTheme(theme)
                             setTheme(theme)
-                        }
+                        }}
                     >
                         <SelectTrigger className='w-[180px]'>
                             <SelectValue placeholder='Customize' />
                         </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup>
-                                <SelectItem value='blue'>blue</SelectItem>
-                                <SelectItem value='orange'>Orange</SelectItem>
-                            </SelectGroup>
+                        <SelectContent className='bg-popover/70 backdrop-blur-sm'>
+                            <SelectItem value='zinc'>
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-zinc-600 p-1'></span>{' '}
+                                    <span>Zinc</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='slate'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-slate-600 p-1'></span>{' '}
+                                    <span>Slate</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='stone'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-stone-600 p-1'></span>{' '}
+                                    <span>Stone</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='gray'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-gray-600 p-1'></span>{' '}
+                                    <span>Gray</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='neutral'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-neutral-600 p-1'></span>{' '}
+                                    <span>Neutral</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='red'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-red-600 p-1'></span>{' '}
+                                    <span>Red</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='rose'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-rose-600 p-1'></span>{' '}
+                                    <span>Rose</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='orange'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-orange-600 p-1'></span>{' '}
+                                    <span>Orange</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='green'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-green-600 p-1'></span>{' '}
+                                    <span>Green</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='blue'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-blue-600 p-1'></span>{' '}
+                                    <span>Blue</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='yellow'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-yellow-600 p-1'></span>{' '}
+                                    <span>Yellow</span>
+                                </span>
+                            </SelectItem>
+                            <SelectItem value='violet'>
+                                {' '}
+                                <span className='flex items-center gap-2'>
+                                    <span className='h-4 w-4 rounded-full bg-violet-600 p-1'></span>{' '}
+                                    <span>Violet</span>
+                                </span>
+                            </SelectItem>
                         </SelectContent>
                     </Select>
                 </div>

@@ -5,9 +5,12 @@ import { cn } from '~/lib/utils'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
+import useTheme from '~/hooks/use-theme'
 
 const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
+    const [theme, setTheme] = useTheme()
+    console.log('hero', theme)
 
     return (
         <main className='mx-auto my-10 flex min-h-[calc(100vh-73px)] max-w-2xl flex-col justify-center gap-6 px-5 text-center lg:my-0'>
@@ -30,7 +33,13 @@ const Hero = () => {
                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                     SaaS{' '}
                 </span>
-                <span className='bg-gradient-to-r from-primary to-rose-600 bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl'>
+                <span
+                    className={cn(
+                        'bg-gradient-to-r from-primary bg-clip-text text-5xl font-extrabold text-transparent lg:text-8xl',
+                        theme === 'orange' && 'to-rose-600',
+                        theme === 'blue' && 'to-purple-600'
+                    )}
+                >
                     Simplicity.
                 </span>
             </motion.h1>

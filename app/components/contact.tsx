@@ -43,7 +43,7 @@ const Contact = () => {
                             target='_blank'
                             rel='noopener noreferrer'
                         >
-                            <TwitterIcon className='h-6 w-6 text-primary/70' />{' '}
+                            <TwitterIcon className='h-6 w-6 text-primary' />{' '}
                             @NaderFerjani
                         </a>
                         <a
@@ -52,11 +52,11 @@ const Contact = () => {
                             target='_blank'
                             rel='noopener noreferrer'
                         >
-                            <LinkedinIcon className='h-6 w-6 text-primary/70' />{' '}
+                            <LinkedinIcon className='h-6 w-6 text-primary' />{' '}
                             <span>nader-ferjani</span>
                         </a>
                         <span className='flex items-center gap-2'>
-                            <Discord className='h-6 w-6 fill-primary/70' />{' '}
+                            <Discord className='h-6 w-6 fill-primary' />{' '}
                             <span>stormynight9</span>
                         </span>
                     </div>
