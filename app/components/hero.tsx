@@ -8,6 +8,7 @@ import { Label } from './ui/label'
 import useTheme from '~/hooks/use-theme'
 import Leaf from './icons/leaf'
 import Flower from './icons/flower'
+import Swirl from './icons/swirl'
 
 const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
@@ -21,8 +22,7 @@ const Hero = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className={cn(
-                    'scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl',
-                    theme === 'green' && 'pb-5 lg:pb-10'
+                    'scroll-m-20 font-inter text-4xl font-extrabold tracking-tight lg:text-5xl'
                 )}
             >
                 <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
@@ -55,13 +55,6 @@ const Hero = () => {
                     )}
                 >
                     Simplicity.
-                    {theme === 'green' && (
-                        <Leaf
-                            linearFrom={'text-primary'}
-                            linearTo={'text-emerald-600'}
-                            className='absolute -bottom-6 left-0 right-0 mx-auto h-auto w-full text-center opacity-80 lg:-bottom-12'
-                        />
-                    )}
                 </span>
             </motion.h1>
             <motion.p
@@ -69,7 +62,7 @@ const Hero = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-                className='text-lg text-muted-foreground'
+                className='text-base text-muted-foreground lg:text-lg'
             >
                 Welcome to <span className='text-primary'>SaaSStellar</span>,
                 your gateway to streamlined operations, innovation, enhanced
@@ -140,7 +133,7 @@ const Hero = () => {
                 )}
                 <p className='w-full text-center text-sm text-muted-foreground'></p>
             </motion.form>
-            {theme !== 'rose' && (
+            {/* {theme !== 'rose' && (
                 <motion.span
                     initial={{ opacity: 0, y: -10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -148,22 +141,37 @@ const Hero = () => {
                     transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
                     className='mx-auto h-44 w-[1px] rounded-full  bg-gradient-to-b from-transparent to-primary'
                 ></motion.span>
-            )}
-            <motion.span
-                initial={{ opacity: 0, y: -10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
-                className='mx-auto'
-            >
-                {theme === 'rose' && (
+            )} */}
+            {theme === 'rose' && (
+                <motion.span
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+                    className='mx-auto'
+                >
                     <Flower
-                        className='h-44 rotate-180'
+                        className='h-56 rotate-180'
                         linearFrom='text-primary'
-                        linearTo='text-primary/10   '
+                        linearTo='text-primary/10'
                     />
-                )}
-            </motion.span>
+                </motion.span>
+            )}
+            {theme === 'green' && (
+                <motion.span
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+                    className='mx-auto'
+                >
+                    <Swirl
+                        className='h-56'
+                        linearFrom='text-primary/10'
+                        linearTo='text-primary'
+                    />
+                </motion.span>
+            )}
         </main>
     )
 }
