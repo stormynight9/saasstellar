@@ -139,7 +139,7 @@ const Hero = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
-                    className='mx-auto h-44 w-[1px] rounded-full  bg-gradient-to-b from-transparent to-primary'
+                    className='mx-auto h-56 w-[1px] rounded-full  bg-gradient-to-b from-transparent to-primary'
                 ></motion.span>
             )}
             {theme === 'rose' && (
