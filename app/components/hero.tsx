@@ -133,7 +133,7 @@ const Hero = () => {
                 )}
                 <p className='w-full text-center text-sm text-muted-foreground'></p>
             </motion.form>
-            {/* {theme !== 'rose' && (
+            {theme !== 'rose' && theme !== 'green' && (
                 <motion.span
                     initial={{ opacity: 0, y: -10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ const Hero = () => {
                     transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
                     className='mx-auto h-44 w-[1px] rounded-full  bg-gradient-to-b from-transparent to-primary'
                 ></motion.span>
-            )} */}
+            )}
             {theme === 'rose' && (
                 <motion.span
                     initial={{ opacity: 0, y: -10 }}
