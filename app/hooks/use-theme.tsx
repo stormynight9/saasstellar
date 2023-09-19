@@ -18,7 +18,7 @@ export const changeTheme = (theme: string) => {
 }
 
 export const getTheme = (): ThemeName => {
-    let theme: ThemeName = 'blue'
+    let theme: ThemeName = 'orange'
     if (typeof window !== 'undefined') {
         theme = localStorage.getItem('theme') as ThemeName
         if (theme !== null) {
@@ -26,7 +26,7 @@ export const getTheme = (): ThemeName => {
             console.log(theme)
             return theme
         }
-        return 'blue'
+        return 'orange'
     }
     return theme
 }
