@@ -46,7 +46,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export default function App() {
     const { theme } = useLoaderData<typeof loader>()
-    console.log('theme loaded', theme)
 
     return (
         <html lang='en' className='dark'>
