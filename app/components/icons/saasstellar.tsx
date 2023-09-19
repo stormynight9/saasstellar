@@ -8,8 +8,7 @@ interface LeafProps extends SVGProps<SVGSVGElement> {
 const Saastellar = ({ linearFrom, linearTo, ...props }: LeafProps) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
-        width={28}
-        height={56}
+        viewBox='0 0 28 56'
         fill='none'
         {...props}
     >

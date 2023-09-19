@@ -23,6 +23,7 @@ const Navbar = () => {
                     {/* <img src={saasstellar} alt='' width={28} height={26} /> */}
                     <Saastellar
                         linearFrom='text-primary'
+                        className='w-7'
                         linearTo={cn(
                             'text-primary',
                             theme === 'zinc' && 'text-zinc-600',
