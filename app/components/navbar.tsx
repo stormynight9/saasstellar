@@ -3,16 +3,14 @@ import { GithubIcon } from 'lucide-react'
 import {
     Select,
     SelectContent,
-    SelectGroup,
     SelectItem,
     SelectTrigger,
     SelectValue,
 } from '~/components/ui/select'
 import useTheme, { changeTheme } from '~/hooks/use-theme'
-import saasstellar from '../assets/saasstellar.svg'
+import { cn } from '~/lib/utils'
 import { type ThemeName } from '~/registry/themes'
 import Saastellar from './icons/saasstellar'
-import { cn } from '~/lib/utils'
 
 const Navbar = () => {
     const [theme, setTheme] = useTheme()
