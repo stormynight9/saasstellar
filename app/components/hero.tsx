@@ -9,6 +9,7 @@ import useTheme from '~/hooks/use-theme'
 import Leaf from './icons/leaf'
 import Flower from './icons/flower'
 import Swirl from './icons/swirl'
+import Fire from './icons/fire'
 
 const Hero = () => {
     const [state, handleSubmit] = useForm('mjvqrzpz')
@@ -133,7 +134,7 @@ const Hero = () => {
                 )}
                 <p className='w-full text-center text-sm text-muted-foreground'></p>
             </motion.form>
-            {theme !== 'rose' && theme !== 'green' && (
+            {theme !== 'rose' && theme !== 'green' && theme !== 'orange' && (
                 <motion.span
                     initial={{ opacity: 0, y: -10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -166,6 +167,21 @@ const Hero = () => {
                     className='mx-auto'
                 >
                     <Swirl
+                        className='h-56'
+                        linearFrom='text-primary/10'
+                        linearTo='text-primary'
+                    />
+                </motion.span>
+            )}
+            {theme === 'orange' && (
+                <motion.span
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+                    className='mx-auto'
+                >
+                    <Fire
                         className='h-56'
                         linearFrom='text-primary/10'
                         linearTo='text-primary'
