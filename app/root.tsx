@@ -34,11 +34,11 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     }
     return json(
         {
-            theme: 'blue',
+            theme: 'orange',
         },
         {
             headers: {
-                'Set-Cookie': await themeCookie.serialize({ theme: 'blue' }),
+                'Set-Cookie': await themeCookie.serialize({ theme: 'orange' }),
             },
         }
     )
