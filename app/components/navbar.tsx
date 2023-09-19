@@ -22,6 +22,7 @@ const Navbar = () => {
                 <Link to='/' className='flex items-center gap-2'>
                     {/* <img src={saasstellar} alt='' width={28} height={26} /> */}
                     <Saastellar
+                        aria-label='saasstellar logo'
                         linearFrom='text-primary'
                         className='w-7'
                         linearTo={cn(
@@ -61,7 +62,10 @@ const Navbar = () => {
                         }}
                         value={theme}
                     >
-                        <SelectTrigger className='w-[180px]'>
+                        <SelectTrigger
+                            className='w-[180px]'
+                            aria-label='customize theme'
+                        >
                             <SelectValue placeholder='Customize' />
                         </SelectTrigger>
                         <SelectContent className=''>
