@@ -11,12 +11,17 @@ import {
 import { Analytics } from '@vercel/analytics/react'
 import stylesheet from '~/tailwind.css'
 import TailwindIndicator from './components/tailwind-indicator'
+import { useLayoutEffect } from 'react'
+import { changeTheme, getTheme } from './hooks/use-theme'
 
 export const links: LinksFunction = () => [
     { rel: 'stylesheet', href: stylesheet },
 ]
 
 export default function App() {
+    useLayoutEffect(() => {
+        changeTheme(getTheme())
+    }, [])
     return (
         <html lang='en' className='dark'>
             <head>

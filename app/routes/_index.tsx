@@ -1,5 +1,4 @@
 import { type MetaFunction } from '@remix-run/node'
-import { useEffect } from 'react'
 import Banner from '~/components/banner'
 import Cms from '~/components/cms'
 import Contact from '~/components/contact'
@@ -8,7 +7,6 @@ import Footer from '~/components/footer'
 import Hero from '~/components/hero'
 import Navbar from '~/components/navbar'
 import Pricing from '~/components/pricing'
-import { changeTheme, getTheme } from '~/hooks/use-theme'
 
 export const meta: MetaFunction = () => {
     return [
@@ -123,10 +121,6 @@ export const meta: MetaFunction = () => {
 }
 
 export default function Index() {
-    useEffect(() => {
-        changeTheme(getTheme())
-    }, [])
-
     return (
         <div className='dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsla(var(--primary)_/_30%),#ffffff00)]'>
             <Navbar />
