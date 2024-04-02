@@ -24,7 +24,7 @@ See it in action: [https://saasstellar.vercel.app/](https://saasstellar.vercel.a
    ```
 2. Install dependencies
     ```bash
-    cd sasstellar
+    cd ssasstellar
    pnpm install
    ```
 3. Start the development server:
