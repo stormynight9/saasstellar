@@ -2,14 +2,13 @@ import { Partytown } from '@builder.io/partytown/react'
 import { type LinksFunction } from '@remix-run/node'
 import {
     Links,
-    LiveReload,
     Meta,
     Outlet,
     Scripts,
     ScrollRestoration,
 } from '@remix-run/react'
 import { Analytics } from '@vercel/analytics/react'
-import stylesheet from '~/tailwind.css'
+import stylesheet from '~/tailwind.css?url'
 import TailwindIndicator from './components/tailwind-indicator'
 import { useLayoutEffect } from 'react'
 import { changeTheme, getTheme } from './hooks/use-theme'
@@ -52,7 +51,6 @@ export default function App() {
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
-                <LiveReload />
                 <TailwindIndicator />
                 {process.env.NODE_ENV === 'production' && <Analytics />}
             </body>
