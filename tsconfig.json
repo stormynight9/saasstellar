@@ -1,11 +1,14 @@
 {
-    "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["**/*.ts", "**/*.tsx"],
     "compilerOptions": {
+        "types": ["@remix-run/node", "vite/client"],
+        "skipLibCheck": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "lib": ["DOM", "DOM.Iterable", "ES2019"],
         "isolatedModules": true,
         "esModuleInterop": true,
         "jsx": "react-jsx",
-        "moduleResolution": "node",
         "resolveJsonModule": true,
         "target": "ES2019",
         "strict": true,
@@ -16,7 +19,7 @@
             "~/*": ["./app/*"]
         },
 
-        // Remix takes care of building everything in `remix build`.
+        // Vite takes care of building everything, not tsc.
         "noEmit": true
     }
 }
