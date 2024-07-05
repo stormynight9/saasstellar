@@ -1,11 +1,11 @@
 import { type SVGProps } from 'react'
 
-interface LeafProps extends SVGProps<SVGSVGElement> {
+interface SaastellarProps extends SVGProps<SVGSVGElement> {
     linearFrom?: string
     linearTo?: string
 }
 
-const Saastellar = ({ linearFrom, linearTo, ...props }: LeafProps) => (
+const Saastellar = ({ linearFrom, linearTo, ...props }: SaastellarProps) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 28 56'

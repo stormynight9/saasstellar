@@ -12,7 +12,7 @@ const Contact = () => {
         <section className='mx-auto mt-40 flex max-w-7xl flex-col items-center gap-20 px-5 lg:flex-row'>
             <div className='mx-auto flex max-w-2xl flex-grow basis-0 flex-col gap-6'>
                 <div>
-                    <h1 className='mt-4 scroll-m-20  text-center font-inter text-4xl font-extrabold tracking-tight lg:text-left lg:text-5xl'>
+                    <h1 className='mt-4 scroll-m-20 text-center font-inter text-4xl font-extrabold tracking-tight lg:text-left lg:text-5xl'>
                         <span className='bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent'>
                             Get{' '}
                         </span>
@@ -64,7 +64,7 @@ const Contact = () => {
             </div>
             <form
                 onSubmit={handleSubmit}
-                className='gradient-border relative flex w-full max-w-xl flex-grow basis-0 flex-col gap-4 rounded-md bg-gradient-to-br from-white/5 to-transparent p-6  before:bg-gradient-to-br before:from-white/5 before:to-transparent '
+                className='gradient-border relative flex w-full max-w-xl flex-grow basis-0 flex-col gap-4 rounded-md bg-gradient-to-br from-white/5 to-transparent p-6 before:bg-gradient-to-br before:from-white/5 before:to-transparent'
             >
                 <div className='flex w-full flex-col gap-1.5'>
                     <Label

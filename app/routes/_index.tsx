@@ -2,6 +2,7 @@ import { type MetaFunction } from '@remix-run/node'
 import Banner from '~/components/banner'
 import Cms from '~/components/cms'
 import Contact from '~/components/contact'
+import FAQs from '~/components/faqs'
 import Features from '~/components/features'
 import Footer from '~/components/footer'
 import Hero from '~/components/hero'
@@ -129,6 +130,7 @@ export default function Index() {
             <Features />
             <Pricing />
             <Banner />
+            <FAQs />
             <Contact />
             <Footer />
         </div>
