@@ -82,11 +82,11 @@ export const meta: MetaFunction = () => {
         {
             property: 'og:image',
             name: 'og:image',
-            content: 'https://saasstellar.vercel.app/saasstellar-og-image.png',
+            content: 'https://saasstellar.nader.run/saasstellar-og-image.png',
         },
         {
             property: 'og:url',
-            content: 'https://saasstellar.vercel.app/',
+            content: 'https://saasstellar.nader.run/',
         },
         {
             property: 'og:type',
@@ -108,15 +108,15 @@ export const meta: MetaFunction = () => {
         },
         {
             name: 'twitter:image',
-            content: 'https://saasstellar.vercel.app/saasstellar-og-image.png',
+            content: 'https://saasstellar.nader.run/saasstellar-og-image.png',
         },
         {
             name: 'twitter:url',
-            content: 'https://saasstellar.vercel.app/',
+            content: 'https://saasstellar.nader.run/',
         },
         {
             name: 'twitter:domain',
-            content: 'saasstellar.vercel.app',
+            content: 'saasstellar.nader.run',
         },
     ]
 }
