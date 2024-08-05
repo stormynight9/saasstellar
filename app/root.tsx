@@ -6,23 +6,41 @@ import {
     Outlet,
     Scripts,
     ScrollRestoration,
+    useLoaderData,
 } from '@remix-run/react'
 import { Analytics } from '@vercel/analytics/react'
 import stylesheet from '~/tailwind.css?url'
 import TailwindIndicator from './components/tailwind-indicator'
 import { useLayoutEffect } from 'react'
 import { changeTheme, getTheme } from './hooks/use-theme'
+import { HighlightInit } from '@highlight-run/remix/client'
+import { json } from '@remix-run/node'
 
 export const links: LinksFunction = () => [
     { rel: 'stylesheet', href: stylesheet },
 ]
 
+export async function loader() {
+    return json({
+        ENV: {
+            HIGHLIGHT_PROJECT_ID: process.env.HIGHLIGHT_PROJECT_ID,
+        },
+    })
+}
+
 export default function App() {
+    const { ENV } = useLoaderData<typeof loader>()
     useLayoutEffect(() => {
         changeTheme(getTheme())
     }, [])
     return (
         <html lang='en' className='dark'>
+            <HighlightInit
+                projectId={ENV.HIGHLIGHT_PROJECT_ID}
+                serviceName='my-remix-frontend'
+                tracingOrigins
+                networkRecording={{ enabled: true, recordHeadersAndBody: true }}
+            />
             <head>
                 <meta charSet='utf-8' />
                 <meta
