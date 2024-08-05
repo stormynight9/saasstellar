@@ -3,10 +3,9 @@
     "sideEffects": false,
     "type": "module",
     "scripts": {
-        "build:remix": "pnpm partytown && remix build",
         "build:sitemap": "remix-sitemap",
         "dev": "remix vite:dev",
-        "build": "remix vite:build",
+        "build": "pnpm partytown && remix vite:build && pnpm build:sitemap",
         "start": "remix-serve ./build/server/index.js",
         "typecheck": "tsc",
         "partytown": "partytown copylib public/~partytown"
